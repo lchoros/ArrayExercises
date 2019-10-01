@@ -10,6 +10,12 @@ namespace ReverseAnArrayOfStrings
     {
         static void Main(string[] args)
         {
+            string[] words = Console.ReadLine().Split(' ').ToArray();
+            for (int i = 0; i < words.Length / 2; i++)
+            {
+                words.Reverse(); 
+            }
+            Console.WriteLine(string.Join(" ", words));
         }
     }
 }
