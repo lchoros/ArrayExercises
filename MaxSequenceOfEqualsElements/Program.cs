@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MaxSequenceOfEqualsElements
 {
@@ -11,28 +8,24 @@ namespace MaxSequenceOfEqualsElements
         static void Main(string[] args)
         {
             int[] numbers = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
-
-            int sequenceCounter = 1;
             int start = 0;
+            int seqLen = 1;
             int longestSequenceCounter = 1;
             int bestStart = 0;
+
             for (int i = 1; i < numbers.Length; i++)
             {
                 if(numbers[i] == numbers[i-1])
                 {
-                    sequenceCounter++;
+                    seqLen++;
                 }
                 else
                 {
-                    sequenceCounter = 1;
-                }
-                if(sequenceCounter > longestSequenceCounter)
-                {
-                    bestStart = i;
-                    longestSequenceCounter = sequenceCounter;
+                    seqLen = 1;
+                    start = i;
                 }
             }
-            Console.WriteLine(string.Join(" ", numbers.Skip(bestStart).Take(longestSequenceCounter)));
+            //Console.WriteLine(string.Join(" ", numbers.Skip(bestStart).Take(longestSequenceCounter)));
         }
     }
 }
