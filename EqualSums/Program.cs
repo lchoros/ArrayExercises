@@ -30,7 +30,7 @@ namespace EqualSums
 
                 if(leftSum == rightSum)
                 {
-                    Console.WriteLine(leftSum);
+                    Console.WriteLine(i);
                     canFind = true;
                 }
             }
