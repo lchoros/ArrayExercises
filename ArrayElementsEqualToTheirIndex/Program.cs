@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ArrayElementsEqualToTheirIndex
 {
@@ -16,7 +13,7 @@ namespace ArrayElementsEqualToTheirIndex
             {
                 if(i == numbers[i])
                 {
-                    Console.Write(numbers[i]);
+                    Console.Write("{0} ", numbers[i]);
                 }
             }
         }
