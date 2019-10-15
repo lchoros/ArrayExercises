@@ -12,20 +12,46 @@ namespace PhoneBook
         {
             string[] numbers = Console.ReadLine().Split(' ').ToArray();
             string[] names = Console.ReadLine().Split(' ').ToArray();
-
+            int length = numbers.Length;
 
             string command = Console.ReadLine();
 
             while(command != "done")
             {
-                for (int i = 0; i < names.Length; i++)
+                string[] commands = command.Split(' ');
+                string com = string.Empty;
+                string recipient = string.Empty;
+                string result = string.Empty;
+                for (int i = 0; i < length; i++)
                 {
-                    if(command == names[i])
+
+                }
+                if (commands[0] == "message")
+                {
+                    com = "sending sms to ";
+                    for (int i = 0; i < length; i++)
                     {
-                        Console.WriteLine("{0} -> {1}", names[i], numbers[i]);
-                        break;
+
                     }
                 }
+                else
+                {
+                    com = "calling";
+                }
+
+                for (int i = 0; i < length; i++)
+                {
+                    if (commands[1] == numbers[i])
+                    {
+                        recipient = names[i];
+                    }
+                    else if (commands[1] == names[i])
+                    {
+                        recipient = $"{ numbers[i] }...";
+                    }
+                    break;
+                }
+
                 command = Console.ReadLine();
             }
         }
